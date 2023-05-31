@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">FuckingLogin</string>
+    <string name="default_hello">Здравствуйте, Георгий!</string>
+    <string name="default_name">Георгий</string>
+    <string name="get_psswrd">Придумайте пароль:</string>
+</resources>
