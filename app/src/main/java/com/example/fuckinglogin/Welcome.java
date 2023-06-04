@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -18,11 +20,15 @@ public class Welcome extends AppCompatActivity {
     public LinearLayout ll;
     public EditText inputName;
     public ImageButton arrow;
+    public SharedData sharedData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+
+        this.sharedData = new SharedData(this);
+        this.redirecLogginedUser();
 
         this.ll = findViewById(R.id.ll);
         this.inputName = findViewById(R.id.inputName);
@@ -78,5 +84,13 @@ public class Welcome extends AppCompatActivity {
                 startActivity(intent);
             }
         };
+    }
+
+    private void redirecLogginedUser() {
+        if (this.sharedData.getIsLoggedIn()) {
+            Intent intent = new Intent(Welcome.this, EnterCode.class);
+            startActivity(intent);
+        }
+        Log.i("tag", "No Login");
     }
 }

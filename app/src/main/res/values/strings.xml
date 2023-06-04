@@ -3,4 +3,5 @@
     <string name="default_hello">Здравствуйте, Георгий!</string>
     <string name="default_name">Георгий</string>
     <string name="get_psswrd">Придумайте пароль:</string>
+    <string name="enter_psswrd">Введите пароль:</string>
 </resources>
